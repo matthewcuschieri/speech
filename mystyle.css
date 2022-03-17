@@ -23,13 +23,15 @@ body {
   padding: 20px;
   margin: auto;
   display: block;
-  width: 800px;
+  width: 900px;
   height: 600px;
   position: absolute;
+
   top: 0;
   bottom: 0;
-  left: 0;
 
+  left: 17;
+  grid-column: 2;
   color: seagreen;
   fill: seagreen;
   stroke: seagreen;
@@ -48,6 +50,8 @@ body {
 #columnTwo {
   grid-column: 2;
   height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
 }
 .text-input {
   display: none;
