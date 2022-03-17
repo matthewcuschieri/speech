@@ -4,7 +4,6 @@ body {
   color: seagreen;
   background-color: seashell;
 }
-
 #snap {
   padding: 20px;
   margin: auto;
@@ -117,7 +116,7 @@ body {
   height: 50px;
   position: absolute; /*Can also be `fixed`*/
   padding-left: 40px;
-  padding-top: 500px;
+  padding-top: 476px;
   margin: auto;
   /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
   max-width: 100%;
