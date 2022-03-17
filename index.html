@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speech Test</title>
+    <meta name="description" content="Opentype.js influenced speech practice" />
+    <meta charset="utf-8" />
+    <!-- Note that the internal development server rewrites the JavaScript URL below to build/opentype.js -->
+    <script type="text/javascript" src="dist/opentype.js"></script>
+    <link rel="stylesheet" href="mystyle.css" />
+  </head>
+  <body>
+    <div id="pronounce">Please Pronounce</div>
+    <div class="container">
+      <div id="columnOne">
+        <input id="file" type="file" />
+        <span class="info" id="font-name">Source Sans</span>
+        <canvas id="preview" width="0" height="0" class="text"></canvas>
+
+        <input onkeyup="renderText()" value="a" autofocus id="textField" />
+
+        <canvas id="snap" width="220" height="220" class="text"></canvas>
+        <div id="buttoncontainer">
+          <button id="buttonOne" onclick="firstA(this)">a</button>
+          <audio
+            id="audio"
+            src="audio/ttsMP3.com_VoiceText_2022-3-16_16_19_37.mp3"
+          ></audio>
+
+          <button id="buttonTwo" onclick="secondA(this)">a</button>
+          <audio
+            id="audioTwo"
+            src="audio/ttsMP3.com_VoiceText_2022-3-16_17_44_7.mp3"
+          ></audio>
+          <button id="buttonThree" onclick="thirdA(this)">a</button>
+          <audio
+            id="audioThree"
+            src="audio/ttsMP3.com_VoiceText_2022-3-16_18_21_40.mp3"
+          ></audio>
+        </div>
+      </div>
+      <div id="columnTwo">
+        <input id="file" type="file" />
+        <span class="info" id="font-name">Source Sans</span>
+        <canvas id="previewTwo" width="0" height="0" class="textTwo"></canvas>
+
+        <input onkeyup="renderText()" value="e" autofocus id="textField" />
+
+        <canvas id="snapTwo" width="220" height="220" class="textTwo"></canvas>
+        <div id="ebuttoncontainer">
+          <button id="ebuttonOne" onclick="firstI(this)">e</button>
+          <audio
+            id="eaudio"
+            src="audio/ttsMP3.com_VoiceText_2022-3-16_16_19_37.mp3"
+          ></audio>
+
+          <button id="ebuttonTwo" onclick="secondI(this)">e</button>
+          <audio
+            id="eaudioTwo"
+            src="audio/ttsMP3.com_VoiceText_2022-3-16_17_44_7.mp3"
+          ></audio>
+          <button id="ebuttonThree" onclick="thirdI(this)">e</button>
+          <audio
+            id="eaudioThree"
+            src="audio/ttsMP3.com_VoiceText_2022-3-16_18_21_40.mp3"
+          ></audio>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="glotat.js"></script>
+  </body>
+</html>
