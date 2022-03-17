@@ -15,40 +15,6 @@ var fontSizeSlider = document.getElementById("font-size-range");
 var hintingCheckbox = document.getElementById("hinting-checkbox");
 var hintingLabel = document.getElementById("hinting-label");
 
-function drawPointsChanged(e) {
-  drawPoints = e.checked;
-  renderText();
-}
-
-function fontSizeChanged() {
-  renderText();
-}
-
-function snapStrengthChanged(e) {
-  snapStrength = e.value;
-}
-
-function snapDistanceChanged(e) {
-  snapDistance = e.value;
-  document.getElementById("snapDistance").innerHTML = "" + snapDistance;
-  renderText();
-}
-
-function snapXChanged(e) {
-  snapX = e.value * 1.0;
-  document.getElementById("snapX").innerHTML = "" + snapX;
-  renderText();
-}
-
-function snapYChanged(e) {
-  snapY = e.value * 1.0;
-  document.getElementById("snapY").innerHTML = "" + snapY;
-  renderText();
-}
-function snapColor() {
-  document.getElementById("snapColor").innerhtml = "" + fill;
-}
-
 // Round a value to the nearest "step".
 function snap(v, distance, strength) {
   return v * (1.0 - strength) + strength * Math.round(v / distance) * distance;
@@ -78,7 +44,6 @@ function renderText() {
   if (!font) return;
   textToRender = document.getElementById("textField").value;
 
-  //   var previewCtx = document.getElementById("preview").getContext("2d");
   var options = {
     kerning: kerning,
     hinting: hinting,
@@ -87,15 +52,6 @@ function renderText() {
       rlig: ligatures,
     },
   };
-  //   previewCtx.clearRect(0, 0, 940, 300);
-  //   font.draw(previewCtx, textToRender, 0, 200, fontSize, options);
-  //   if (drawPoints) {
-  //     font.drawPoints(previewCtx, textToRender, 0, 200, fontSize, options);
-  //   }
-  //   if (drawMetrics) {
-  //     font.drawMetrics(previewCtx, textToRender, 0, 200, fontSize, options);
-  //   }
-
   snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
   doSnap(snapPath);
   //   fill(green);
@@ -103,7 +59,24 @@ function renderText() {
   snapCtx.clearRect(0, 0, 1940, 1300);
   snapPath.draw(snapCtx);
 }
-
+function renderTextTwo() {
+  if (!font) return;
+  textToRender = document.getElementById("textFieldTwo").value;
+  var options = {
+    kerning: kerning,
+    hinting: hinting,
+    features: {
+      liga: ligatures,
+      rlig: ligatures,
+    },
+  };
+  snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
+  doSnap(snapPath);
+  //   fill(green);
+  var snapCtx = document.getElementById("snap").getContext("2d");
+  snapCtx.clearRect(0, 0, 1940, 1300);
+  snapPath.draw(snapCtx);
+}
 function enableHighDPICanvas(canvas) {
   if (typeof canvas === "string") {
     canvas = document.getElementById(canvas);
@@ -153,6 +126,7 @@ var fileButton = document.getElementById("file");
 fileButton.addEventListener("change", onReadFile, false);
 
 enableHighDPICanvas("snap");
+enableHighDPICanvas("snapTwo");
 
 opentype.load(fontFileName, function (err, font) {
   var amount, glyph, ctx, x, y, fontSize;
@@ -214,5 +188,61 @@ function playTwo() {
 
 function playThree() {
   var audio = document.getElementById("audioThree");
+  audio.play();
+}
+
+function firstE(o) {
+  document.getElementById("textField").value = o.innerHTML;
+  snapDistance = 43;
+  snapStrength = 60;
+  snapX = 83;
+  value = "e";
+  playE();
+  renderText();
+}
+document.getElementById("ebuttonOne").onclick = function () {
+  firstE(this);
+  value = "e";
+};
+function playE() {
+  var audio = document.getElementById("eaudio");
+  audio.play();
+}
+
+function secondE(o) {
+  document.getElementById("textField").value = o.innerHTML;
+  snapDistance = 13;
+  snapStrength = 60;
+  snapX = 23;
+  snapY = 20;
+  value = "e";
+  playETwo();
+  renderText();
+}
+document.getElementById("ebuttonTwo").onclick = function () {
+  secondE(this);
+  value = "e";
+};
+function playETwo() {
+  var audio = document.getElementById("eaudioTwo");
+  audio.play();
+}
+
+function thirdE(o) {
+  document.getElementById("textField").value = o.innerHTML;
+  snapDistance = 93;
+  snapStrength = 60;
+  snapX = 13;
+  snapY = 20;
+  value = "e";
+  playEThree();
+  renderText();
+}
+document.getElementById("ebuttonThree").onclick = function () {
+  thirdE(this);
+  value = "e";
+};
+function playEThree() {
+  var audio = document.getElementById("eaudioThree");
   audio.play();
 }
