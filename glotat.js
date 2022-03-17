@@ -136,7 +136,7 @@ opentype.load(fontFileName, function (err, font) {
   }
   onFontLoaded(font);
 });
-
+//button stuff//
 document.getElementById("buttonOne").onclick = function () {
   firstA(this);
   value = "b";
