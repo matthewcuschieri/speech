@@ -26,12 +26,56 @@ body {
   width: 900px;
   height: 600px;
   position: absolute;
-
   top: 0;
   bottom: 0;
-
   left: 17;
   grid-column: 2;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
+#snapThree {
+  padding: 20px;
+  padding-left: 60px;
+  margin: auto;
+  display: block;
+  width: 900px;
+  height: 700px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 237;
+  grid-column: 3;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
+#snapFour {
+  padding: 20px;
+  margin: auto;
+  display: block;
+  width: 900px;
+  height: 700px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 237;
+  grid-column: 4;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
+#snapFive {
+  padding: 20px;
+  margin: auto;
+  display: block;
+  width: 900px;
+  height: 700px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 237;
+  grid-column: 5;
   color: seagreen;
   fill: seagreen;
   stroke: seagreen;
@@ -39,7 +83,7 @@ body {
 .container {
   display: grid;
   border-top: 1.5px seagreen solid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 #columnOne {
   grid-column: 1;
@@ -49,6 +93,24 @@ body {
 }
 #columnTwo {
   grid-column: 2;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
+#columnThree {
+  grid-column: 3;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
+#columnFour {
+  grid-column: 4;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
+#columnFive {
+  grid-column: 5;
   height: 90vh;
   margin-right: 40px;
   border-right: 1.5px seagreen dashed;
@@ -97,6 +159,57 @@ body {
   color: seashell;
   background-color: seagreen;
 }
+#ibuttonOne,
+#ibuttonTwo,
+#ibuttonThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#ibuttonOne:hover,
+#ibuttonTwo:hover,
+#ibuttonThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
+#obuttonOne,
+#obuttonTwo,
+#obuttonThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#obuttonOne:hover,
+#obuttonTwo:hover,
+#obuttonThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
+#ubuttonOne,
+#ubuttonTwo,
+#ubuttonThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#ubuttonOne:hover,
+#ubuttonTwo:hover,
+#ubuttonThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
 #preview {
   height: 50%;
   width: 80%;
@@ -128,12 +241,54 @@ body {
   overflow: auto;
   grid-column: 2;
 }
+#ibuttoncontainer {
+  width: 150px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 40px;
+  padding-top: 476px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 3;
+}
+#obuttoncontainer {
+  width: 150px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 40px;
+  padding-top: 476px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 4;
+}
+#ubuttoncontainer {
+  width: 150px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 40px;
+  padding-top: 476px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 5;
+}
 
 #font-size-range,
 #textField,
 #font-name,
 #file,
-#textFieldTwo {
+#textFieldTwo,
+#textFieldThree,
+#textFieldFour,
+#textFieldFive {
   display: none;
 }
 text {
