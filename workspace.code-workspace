@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "speech",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "speech"
+	}
+}
