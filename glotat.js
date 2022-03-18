@@ -214,7 +214,7 @@ document.getElementById("buttonTwo").onclick = function () {
 };
 function secondA(o) {
   document.getElementById("textField").value = o.innerHTML;
-  snapDistance = 33;
+  snapDistance = 53;
   snapStrength = 100;
   fontSize = 350;
   value = "a";
@@ -225,8 +225,8 @@ function secondA(o) {
 function thirdA(o) {
   document.getElementById("textField").value = o.innerHTML;
   snapDistance = 43;
-  snapStrength = 60;
-  snapX = 83;
+  snapStrength = 90;
+  snapX = 3;
   fontSize = 350;
   value = "a";
   playThree();
@@ -272,9 +272,9 @@ function playE() {
 
 function secondE(o) {
   document.getElementById("textFieldTwo").value = o.innerHTML;
-  snapDistance = 13;
-  snapStrength = 60;
-  snapX = 23;
+  snapDistance = 83;
+  snapStrength = 50;
+  snapX = 13;
   snapY = 20;
   fontSize = 350;
   value = "e";
@@ -292,9 +292,9 @@ function playETwo() {
 
 function thirdE(o) {
   document.getElementById("textFieldTwo").value = o.innerHTML;
-  snapDistance = 93;
-  snapStrength = 60;
-  snapX = 13;
+  snapDistance = 53;
+  snapStrength = 90;
+  snapX = 153;
   fontSize = 350;
   snapY = 20;
   value = "e";
