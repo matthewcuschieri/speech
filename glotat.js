@@ -215,7 +215,7 @@ document.getElementById("buttonTwo").onclick = function () {
 function secondA(o) {
   document.getElementById("textField").value = o.innerHTML;
   snapDistance = 53;
-  snapStrength = 100;
+  snapStrength = 200;
   fontSize = 350;
   value = "a";
   playTwo();
