@@ -6,6 +6,7 @@ var drawPoints = true;
 var kerning = true;
 var ligatures = true;
 var hinting = false;
+var fillStyle = "rgba(255, 165, 0, 1)";
 
 var snapStrength = 1;
 var snapDistance = 1;
@@ -47,6 +48,7 @@ function renderText() {
   var options = {
     kerning: kerning,
     hinting: hinting,
+
     features: {
       liga: ligatures,
       rlig: ligatures,
@@ -56,6 +58,7 @@ function renderText() {
   doSnap(snapPath);
   //   fill(green);
   var snapCtx = document.getElementById("snap").getContext("2d");
+
   snapCtx.clearRect(0, 0, 1940, 1300);
   snapPath.draw(snapCtx);
 }
@@ -72,6 +75,7 @@ function renderTextTwo() {
   };
   snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
   doSnap(snapPath);
+
   //   fill(green);
   var snapCtx = document.getElementById("snapTwo").getContext("2d");
   snapCtx.clearRect(0, 0, 1940, 1300);
@@ -94,6 +98,7 @@ function renderTextThree() {
   var snapCtx = document.getElementById("snapThree").getContext("2d");
   snapCtx.clearRect(0, 0, 1940, 1300);
   snapPath.draw(snapCtx);
+  fill("green");
 }
 function renderTextFour() {
   if (!font) return;
@@ -128,7 +133,10 @@ function renderTextFive() {
   doSnap(snapPath);
   //   fill(green);
   var snapCtx = document.getElementById("snapFive").getContext("2d");
+  // ctx.fillStyle = "orange";
+
   snapCtx.clearRect(0, 0, 1940, 1300);
+
   snapPath.draw(snapCtx);
 }
 function enableHighDPICanvas(canvas) {
@@ -205,6 +213,7 @@ function firstA(o) {
   fontSize = 350;
   snapX = 83;
   value = "a";
+
   play();
   renderText();
 }
@@ -357,6 +366,7 @@ function thirdI(o) {
   snapY = -90;
   value = "i";
   fontSize = 250;
+
   playIThree();
   renderTextThree();
 }
