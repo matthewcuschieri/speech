@@ -281,10 +281,10 @@ function playE() {
 
 function secondE(o) {
   document.getElementById("textFieldTwo").value = o.innerHTML;
-  snapDistance = 83;
-  snapStrength = 50;
+  snapDistance = 103;
+  snapStrength = 90;
   snapX = 13;
-  snapY = 20;
+  snapY = 10;
   fontSize = 350;
   value = "e";
   playETwo();
