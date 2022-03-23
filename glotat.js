@@ -327,9 +327,9 @@ function playEThree() {
 //i button stuff//
 function firstI(o) {
   document.getElementById("textFieldThree").value = o.innerHTML;
-  snapDistance = 43;
-  snapStrength = 60;
-  snapX = 83;
+  snapDistance = 13;
+  snapStrength = 500;
+  snapX = 43;
   fontSize = 250;
   value = "i";
   playI();
@@ -347,7 +347,7 @@ function playI() {
 function secondI(o) {
   document.getElementById("textFieldThree").value = o.innerHTML;
   snapDistance = 13;
-  snapStrength = 60;
+  snapStrength = 100;
   snapX = 23;
   snapY = 20;
   value = "i";
