@@ -19,6 +19,15 @@ body {
   fill: seagreen;
   stroke: seagreen;
 }
+/* #snap:hover path {
+  transition: 0.2s;
+  snapdistance: 13;
+  snapstrength: 50;
+  fontsize: 350;
+} */
+/* #snap:hover {
+  border: red solid 1px;
+} */
 #snapTwo {
   padding: 20px;
   margin: auto;
@@ -80,6 +89,7 @@ body {
   fill: seagreen;
   stroke: seagreen;
 }
+
 .container {
   display: grid;
   border-top: 1.5px seagreen solid;
