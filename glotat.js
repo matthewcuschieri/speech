@@ -84,6 +84,7 @@ function renderTextTwo() {
 function renderTextThree() {
   if (!font) return;
   textToRender = document.getElementById("textFieldThree").value;
+  fontSize = 250;
   var options = {
     kerning: kerning,
     hinting: hinting,
@@ -103,6 +104,7 @@ function renderTextThree() {
 function renderTextFour() {
   if (!font) return;
   textToRender = document.getElementById("textFieldFour").value;
+
   var options = {
     kerning: kerning,
     hinting: hinting,
@@ -158,6 +160,10 @@ function onFontLoaded(font) {
   var glyphsDiv, i, x, y, fontSize;
   window.font = font;
   renderText();
+  renderTextTwo();
+  renderTextFour();
+  renderTextFive();
+  renderTextThree();
 }
 
 function onReadFile(e) {
