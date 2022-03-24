@@ -736,6 +736,7 @@ function firstBA(o) {
   fontSize = 150;
   snapX = 83;
   value = "a";
+  playB();
   renderTextB();
 }
 document.getElementById("buttonBTwo").onclick = function () {
@@ -748,6 +749,7 @@ function secondBA(o) {
   snapStrength = 70;
   fontSize = 150;
   value = "a";
+  playBTwo();
   renderTextB();
 }
 
@@ -758,7 +760,7 @@ function thirdBA(o) {
   snapX = 3;
   fontSize = 150;
   value = "a";
-
+  playBThree();
   renderTextB();
 }
 document.getElementById("buttonBThree").onclick = function () {
@@ -767,16 +769,16 @@ document.getElementById("buttonBThree").onclick = function () {
 };
 
 function playB() {
-  // var audio = document.getElementById("audioB");
+  var audio = document.getElementById("audioB");
   audio.play();
 }
 function playBTwo() {
-  // var audio = document.getElementById("audioBTwo");
+  var audio = document.getElementById("audioBTwo");
   audio.play();
 }
 
 function playBThree() {
-  // var audio = document.getElementById("audioBThree");
+  var audio = document.getElementById("audioBThree");
   audio.play();
 }
 //eB button stuff//
@@ -787,15 +789,15 @@ function firstBE(o) {
   snapX = 83;
   fontSize = 150;
   value = "e";
-
+  playBE();
   renderTextTwoB();
 }
 document.getElementById("ebuttonBOne").onclick = function () {
   firstBE(this);
   value = "e";
 };
-function playE() {
-  // var audio = document.getElementById("eaudio");
+function playBE() {
+  var audio = document.getElementById("eaudioB");
   audio.play();
 }
 
@@ -807,15 +809,15 @@ function secondBE(o) {
   snapY = 10;
   fontSize = 150;
   value = "e";
-
+  playBETwo();
   renderTextTwoB();
 }
 document.getElementById("ebuttonBTwo").onclick = function () {
   secondE(this);
   value = "e";
 };
-function playETwo() {
-  var audio = document.getElementById("eaudioTwo");
+function playBETwo() {
+  var audio = document.getElementById("eaudioBTwo");
   audio.play();
 }
 
@@ -827,14 +829,15 @@ function thirdBE(o) {
   fontSize = 150;
   snapY = 20;
   value = "e";
+  playBEThree();
   renderTextTwoB();
 }
 document.getElementById("ebuttonBThree").onclick = function () {
   thirdE(this);
   value = "e";
 };
-function playEThree() {
-  var audio = document.getElementById("eaudioThree");
+function playBEThree() {
+  var audio = document.getElementById("eaudioBThree");
   audio.play();
 }
 
@@ -846,14 +849,15 @@ function firstBI(o) {
   snapX = 13;
   fontSize = 150;
   value = "i";
+  playBI();
   renderTextThreeB();
 }
 document.getElementById("ibuttonBOne").onclick = function () {
   firstBI(this);
   value = "i";
 };
-function playE() {
-  // var audio = document.getElementById("eaudio");
+function playBI() {
+  var audio = document.getElementById("iaudioB");
   audio.play();
 }
 
@@ -864,13 +868,15 @@ function secondBI(o) {
   snapX = 13;
 
   value = "i";
+  playBITwo();
   renderTextThreeB();
 }
 document.getElementById("ibuttonBTwo").onclick = function () {
   secondBI(this);
   value = "i";
 };
-function playETwo() {
+function playBITwo() {
+  var audio = document.getElementById("iaudioBTwo");
   audio.play();
 }
 
@@ -880,14 +886,15 @@ function thirdBI(o) {
   snapStrength = 10;
   fontSize = 150;
   value = "i";
+  playBIThree();
   renderTextThreeB();
 }
 document.getElementById("ibuttonBThree").onclick = function () {
   thirdBI(this);
   value = "i";
 };
-function playEThree() {
-  // var audio = document.getElementById("eaudioThree");
+function playBIThree() {
+  var audio = document.getElementById("iaudioBThree");
   audio.play();
 }
 
@@ -899,15 +906,15 @@ function firstBO(o) {
 
   fontSize = 130;
   value = "o";
-
+  playBO();
   renderTextFourB();
 }
 document.getElementById("obuttonBOne").onclick = function () {
   firstBO(this);
   value = "e";
 };
-function playO() {
-  // var audio = document.getElementById("eaudio");
+function playBO() {
+  var audio = document.getElementById("oaudioB");
   audio.play();
 }
 
@@ -919,15 +926,15 @@ function secondBO(o) {
   snapY = 10;
   fontSize = 130;
   value = "o";
-
+  playBOTwo();
   renderTextFourB();
 }
 document.getElementById("obuttonBTwo").onclick = function () {
   secondBO(this);
   value = "e";
 };
-function playOTwo() {
-  var audio = document.getElementById("oaudioTwo");
+function playBOTwo() {
+  var audio = document.getElementById("oaudioBTwo");
   audio.play();
 }
 
@@ -938,14 +945,15 @@ function thirdBO(o) {
   snapX = 153;
   fontSize = 130;
   value = "e";
+  playBOThree();
   renderTextFourB();
 }
 document.getElementById("obuttonBThree").onclick = function () {
   thirdBO(this);
   value = "e";
 };
-function playOThree() {
-  var audio = document.getElementById("eaudioThree");
+function playBOThree() {
+  var audio = document.getElementById("oaudioBThree");
   audio.play();
 }
 
@@ -957,6 +965,7 @@ function firstBU(o) {
   snapX = 83;
   fontSize = 150;
   value = "u";
+  playUB();
   renderTextFiveB();
 }
 document.getElementById("ubuttonBOne").onclick = function () {
@@ -964,7 +973,7 @@ document.getElementById("ubuttonBOne").onclick = function () {
   value = "e";
 };
 function playUB() {
-  // var audio = document.getElementById("eaudio");
+  var audio = document.getElementById("uaudioB");
   audio.play();
 }
 
@@ -976,7 +985,7 @@ function secondBU(o) {
   snapY = 10;
   fontSize = 150;
   value = "u";
-
+  playUBTwo();
   renderTextFiveB();
 }
 document.getElementById("ubuttonBTwo").onclick = function () {
@@ -984,7 +993,7 @@ document.getElementById("ubuttonBTwo").onclick = function () {
   value = "e";
 };
 function playUBTwo() {
-  var audio = document.getElementById("uaudioTwo");
+  var audio = document.getElementById("uaudioBTwo");
   audio.play();
 }
 
@@ -995,6 +1004,7 @@ function thirdBU(o) {
   snapX = 13;
   fontSize = 100;
   value = "e";
+  playUBThree();
   renderTextFiveB();
 }
 document.getElementById("ubuttonBThree").onclick = function () {
@@ -1002,6 +1012,6 @@ document.getElementById("ubuttonBThree").onclick = function () {
   value = "e";
 };
 function playUBThree() {
-  var audio = document.getElementById("eaudioThree");
+  var audio = document.getElementById("uaudioBThree");
   audio.play();
 }
