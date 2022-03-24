@@ -6,184 +6,397 @@
     <meta charset="utf-8" />
     <!-- Note that the internal development server rewrites the JavaScript URL below to build/opentype.js -->
     <script type="text/javascript" src="dist/opentype.js"></script>
+    <script src="https://unpkg.com/flubber@0.3.0"></script>
+    <script src=" https://d3js.org/d3.v5.min.js"></script>
+
     <link rel="stylesheet" href="mystyle.css" />
   </head>
   <body>
-    <div id="pronounce">Please Pronounce</div>
-    <div class="container">
-      <div id="columnOne">
-        <input id="file" type="file" />
-        <span class="info" id="font-name">Source Sans</span>
-        <canvas id="preview" width="0" height="0" class="text"></canvas>
+    <div id="pronounce">Please Pronounce: Introduction</div>
+    <div id="majorcontain">
+      <div class="container">
+        <div id="columnOne">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas id="preview" width="0" height="0" class="text"></canvas>
 
-        <input onkeyup="renderText()" value="a" autofocus id="textField" />
+          <input onkeyup="renderText()" value="a" autofocus id="textField" />
 
-        <canvas id="snap" width="220" height="220" class="text"></canvas>
-        <div id="buttoncontainer">
-          <button id="buttonOne" onclick="firstA(this)">a</button>
-          <audio
-            id="audio"
-            src="audio/ttsMP3.com_VoiceText_2022-3-16_16_19_37.mp3"
-          ></audio>
+          <canvas id="snap" width="220" height="220" class="text"></canvas>
+          <div id="buttoncontainer">
+            <button id="buttonOne" onclick="firstA(this)">a</button>
+            <audio
+              id="audio"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_16_19_37.mp3"
+            ></audio>
 
-          <button id="buttonTwo" onclick="secondA(this)">a</button>
-          <audio
-            id="audioTwo"
-            src="audio/ttsMP3.com_VoiceText_2022-3-16_17_44_7.mp3"
-          ></audio>
-          <button id="buttonThree" onclick="thirdA(this)">a</button>
-          <audio
-            id="audioThree"
-            src="audio/ttsMP3.com_VoiceText_2022-3-16_18_21_40.mp3"
-          ></audio>
+            <button id="buttonTwo" onclick="secondA(this)">a</button>
+            <audio
+              id="audioTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_17_44_7.mp3"
+            ></audio>
+            <button id="buttonThree" onclick="thirdA(this)">a</button>
+            <audio
+              id="audioThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_18_21_40.mp3"
+            ></audio>
+          </div>
+        </div>
+        <div id="columnTwo">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas id="previewTwo" width="0" height="0" class="textTwo"></canvas>
+
+          <input
+            onkeyup="renderTextTwo()"
+            value="e"
+            autofocus
+            id="textFieldTwo"
+          />
+
+          <canvas id="snapTwo" width="220" height="220" class="textTwo"
+            >e</canvas
+          >
+          <div id="ebuttoncontainer">
+            <button id="ebuttonOne" onclick="firstE(this)">e</button>
+            <audio
+              id="eaudio"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_20_51_10.mp3"
+            ></audio>
+
+            <button id="ebuttonTwo" onclick="secondE(this)">e</button>
+            <audio
+              id="eaudioTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_20_54_2.mp3"
+            ></audio>
+            <button id="ebuttonThree" onclick="thirdE(this)">e</button>
+            <audio
+              id="eaudioThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_20_58_2.mp3"
+            ></audio>
+          </div>
+        </div>
+        <div id="columnThree">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas
+            id="previewThree"
+            width="0"
+            height="0"
+            class="textThree"
+          ></canvas>
+
+          <input
+            onkeyup="renderTextThree()"
+            value="i"
+            autofocus
+            id="textFieldThree"
+          />
+
+          <canvas
+            id="snapThree"
+            width="220"
+            height="220"
+            class="textThree"
+          ></canvas>
+          <div id="ibuttoncontainer">
+            <button id="ibuttonOne" onclick="firstI(this)">i</button>
+            <audio
+              id="iaudio"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_51_30.mp3"
+            ></audio>
+
+            <button id="ibuttonThree" onclick="secondI(this)">i</button>
+            <audio
+              id="iaudioTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_52_16.mp3"
+            ></audio>
+            <button id="ibuttonThree" onclick="thirdI(this)">i</button>
+            <audio
+              id="iaudioThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_53_4.mp3"
+            ></audio>
+          </div>
+        </div>
+        <div id="columnFour">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas
+            id="previewFour"
+            width="0"
+            height="0"
+            class="textFour"
+          ></canvas>
+
+          <input
+            onkeyup="renderTextFour()"
+            value="o"
+            autofocus
+            id="textFieldFour"
+          />
+
+          <canvas
+            id="snapFour"
+            width="220"
+            height="220"
+            class="textFour"
+          ></canvas>
+          <div id="obuttoncontainer">
+            <button id="obuttonOne" onclick="firstO(this)">o</button>
+            <audio
+              id="oaudio"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_53_38.mp3"
+            ></audio>
+
+            <button id="obuttonTwo" onclick="secondO(this)">o</button>
+            <audio
+              id="oaudioTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_54_4.mp3"
+            ></audio>
+            <button id="obuttonThree" onclick="thirdO(this)">o</button>
+            <audio
+              id="oaudioThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_54_43.mp3"
+            ></audio>
+          </div>
+        </div>
+        <div id="columnFive">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas
+            id="previewFive"
+            width="0"
+            height="0"
+            class="textFive"
+          ></canvas>
+
+          <input
+            onkeyup="renderTextFive()"
+            value="u"
+            autofocus
+            id="textFieldFive"
+          />
+
+          <canvas
+            id="snapFive"
+            width="220"
+            height="220"
+            class="textFive"
+          ></canvas>
+          <div id="ubuttoncontainer">
+            <button id="ubuttonOne" onclick="firstU(this)">u</button>
+            <audio
+              id="uaudio"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_55_32.mp3"
+            ></audio>
+
+            <button id="ubuttonTwo" onclick="secondU(this)">u</button>
+            <audio
+              id="uaudioTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_55_55.mp3"
+            ></audio>
+            <button id="ubuttonThree" onclick="thirdU(this)">u</button>
+            <audio
+              id="uaudioThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_56_34.mp3"
+            ></audio>
+          </div>
         </div>
       </div>
-      <div id="columnTwo">
-        <input id="file" type="file" />
-        <span class="info" id="font-name">Source Sans</span>
-        <canvas id="previewTwo" width="0" height="0" class="textTwo"></canvas>
 
-        <input
-          onkeyup="renderTextTwo()"
-          value="e"
-          autofocus
-          id="textFieldTwo"
-        />
+      <div class="containerTwo">
+        <div id="pronounceTwo">Please Pronounce: Usage</div>
+        <div id="columnBOne">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas id="previewB" width="0" height="0" class="textB"></canvas>
 
-        <canvas id="snapTwo" width="220" height="220" class="textTwo">e</canvas>
-        <div id="ebuttoncontainer">
-          <button id="ebuttonOne" onclick="firstE(this)">e</button>
-          <audio
-            id="eaudio"
-            src="audio/ttsMP3.com_VoiceText_2022-3-16_20_51_10.mp3"
-          ></audio>
+          <input onkeyup="renderTextB()" value="a" autofocus id="textFieldB" />
 
-          <button id="ebuttonTwo" onclick="secondE(this)">e</button>
-          <audio
-            id="eaudioTwo"
-            src="audio/ttsMP3.com_VoiceText_2022-3-16_20_54_2.mp3"
-          ></audio>
-          <button id="ebuttonThree" onclick="thirdE(this)">e</button>
-          <audio
-            id="eaudioThree"
-            src="audio/ttsMP3.com_VoiceText_2022-3-16_20_58_2.mp3"
-          ></audio>
+          <canvas id="snapB" width="250" height="220" class="textB"></canvas>
+          <div id="buttoncontainerB">
+            <button id="buttonBOne" onclick="firstBA(this)">air</button>
+            <!-- <audio
+              id="audioB"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_16_19_37.mp3"
+            ></audio> -->
+
+            <button id="buttonBTwo" onclick="secondBA(this)">say</button>
+            <!-- <audio
+              id="audioBTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_17_44_7.mp3"
+            ></audio> -->
+            <button id="buttonBThree" onclick="thirdBA(this)">ant</button>
+            <!-- <audio
+              id="audioBThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_18_21_40.mp3"
+            ></audio> -->
+          </div>
         </div>
-      </div>
-      <div id="columnThree">
-        <input id="file" type="file" />
-        <span class="info" id="font-name">Source Sans</span>
-        <canvas
-          id="previewThree"
-          width="0"
-          height="0"
-          class="textThree"
-        ></canvas>
+        <div id="columnBTwo">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas
+            id="previewBTwo"
+            width="0"
+            height="0"
+            class="textTwoB"
+          ></canvas>
 
-        <input
-          onkeyup="renderTextThree()"
-          value="i"
-          autofocus
-          id="textFieldThree"
-        />
+          <input
+            onkeyup="renderTextTwoB()"
+            value="e"
+            autofocus
+            id="textFieldTwoB"
+          />
 
-        <canvas
-          id="snapThree"
-          width="220"
-          height="220"
-          class="textThree"
-        ></canvas>
-        <div id="ibuttoncontainer">
-          <button id="ibuttonOne" onclick="firstI(this)">i</button>
-          <audio
-            id="iaudio"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_51_30.mp3"
-          ></audio>
+          <canvas id="snapTwoB" width="250" height="220" class="textTwoB"
+            >e</canvas
+          >
+          <div id="ebuttonBcontainer">
+            <button id="ebuttonBOne" onclick="firstBE(this)">egg</button>
+            <audio
+              id="eaudioB"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_20_51_10.mp3"
+            ></audio>
 
-          <button id="ibuttonThree" onclick="secondI(this)">i</button>
-          <audio
-            id="iaudioTwo"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_52_16.mp3"
-          ></audio>
-          <button id="ibuttonThree" onclick="thirdI(this)">i</button>
-          <audio
-            id="iaudioThree"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_53_4.mp3"
-          ></audio>
+            <button id="ebuttonBTwo" onclick="secondBE(this)">ear</button>
+            <audio
+              id="eaudioBTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_20_54_2.mp3"
+            ></audio>
+            <button id="ebuttonBThree" onclick="thirdBE(this)">bee</button>
+            <audio
+              id="eaudioBThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-16_20_58_2.mp3"
+            ></audio>
+          </div>
         </div>
-      </div>
-      <div id="columnFour">
-        <input id="file" type="file" />
-        <span class="info" id="font-name">Source Sans</span>
-        <canvas id="previewFour" width="0" height="0" class="textFour"></canvas>
+        <div id="columnBThree">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas
+            id="previewBThree"
+            width="0"
+            height="0"
+            class="textThreeB"
+          ></canvas>
 
-        <input
-          onkeyup="renderTextFour()"
-          value="o"
-          autofocus
-          id="textFieldFour"
-        />
+          <input
+            onkeyup="renderTextThreeB()"
+            value="i"
+            autofocus
+            id="textFieldThreeB"
+          />
 
-        <canvas
-          id="snapFour"
-          width="220"
-          height="220"
-          class="textFour"
-        ></canvas>
-        <div id="obuttoncontainer">
-          <button id="obuttonOne" onclick="firstO(this)">o</button>
-          <audio
-            id="oaudio"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_53_38.mp3"
-          ></audio>
+          <canvas
+            id="snapThreeB"
+            width="250"
+            height="220"
+            class="textThreeB"
+          ></canvas>
+          <div id="ibuttoncontainerB">
+            <button id="ibuttonBOne" onclick="firstBI(this)">it</button>
+            <audio
+              id="iaudioB"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_51_30.mp3"
+            ></audio>
 
-          <button id="obuttonTwo" onclick="secondO(this)">o</button>
-          <audio
-            id="oaudioTwo"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_54_4.mp3"
-          ></audio>
-          <button id="obuttonThree" onclick="thirdO(this)">o</button>
-          <audio
-            id="oaudioThree"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_54_43.mp3"
-          ></audio>
+            <button id="ibuttonBTwo" onclick="secondBI(this)">tie</button>
+            <audio
+              id="iaudioBTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_52_16.mp3"
+            ></audio>
+            <button id="ibuttonBThree" onclick="thirdBI(this)">ice</button>
+            <audio
+              id="iaudioBThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_53_4.mp3"
+            ></audio>
+          </div>
         </div>
-      </div>
-      <div id="columnFive">
-        <input id="file" type="file" />
-        <span class="info" id="font-name">Source Sans</span>
-        <canvas id="previewFive" width="0" height="0" class="textFive"></canvas>
+        <div id="columnBFour">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas
+            id="previewFourB"
+            width="0"
+            height="0"
+            class="textFourB"
+          ></canvas>
 
-        <input
-          onkeyup="renderTextFive()"
-          value="u"
-          autofocus
-          id="textFieldFive"
-        />
+          <input
+            onkeyup="renderTextFourB()"
+            value="o"
+            autofocus
+            id="textFieldFourB"
+          />
 
-        <canvas
-          id="snapFive"
-          width="220"
-          height="220"
-          class="textFive"
-        ></canvas>
-        <div id="ubuttoncontainer">
-          <button id="ubuttonOne" onclick="firstU(this)">u</button>
-          <audio
-            id="uaudio"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_55_32.mp3"
-          ></audio>
+          <canvas
+            id="snapFourB"
+            width="220"
+            height="220"
+            class="textBFour"
+          ></canvas>
+          <div id="obuttonBcontainer">
+            <button id="obuttonBOne" onclick="firstBO(this)">odd</button>
+            <audio
+              id="oaudioB"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_53_38.mp3"
+            ></audio>
 
-          <button id="ubuttonTwo" onclick="secondU(this)">u</button>
-          <audio
-            id="uaudioTwo"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_55_55.mp3"
-          ></audio>
-          <button id="ubuttonThree" onclick="thirdU(this)">u</button>
-          <audio
-            id="uaudioThree"
-            src="audio/ttsMP3.com_VoiceText_2022-3-18_14_56_34.mp3"
-          ></audio>
+            <button id="obuttonBTwo" onclick="secondBO(this)">boy</button>
+            <audio
+              id="oaudioBTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_54_4.mp3"
+            ></audio>
+            <button id="obuttonBThree" onclick="thirdBO(this)">few</button>
+            <audio
+              id="oaudioBThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_54_43.mp3"
+            ></audio>
+          </div>
+        </div>
+        <div id="columnBFive">
+          <input id="file" type="file" />
+          <span class="info" id="font-name">Source Sans</span>
+          <canvas
+            id="previewFiveB"
+            width="0"
+            height="0"
+            class="textFiveB"
+          ></canvas>
+
+          <input
+            onkeyup="renderTextFiveB()"
+            value="u"
+            autofocus
+            id="textFieldFiveB"
+          />
+
+          <canvas
+            id="snapBFive"
+            width="250"
+            height="220"
+            class="textBFive"
+          ></canvas>
+          <div id="ubuttonBcontainer">
+            <button id="ubuttonBOne" onclick="firstBU(this)">up</button>
+            <audio
+              id="uaudioB"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_55_32.mp3"
+            ></audio>
+
+            <button id="ubuttonBTwo" onclick="secondBU(this)">fur</button>
+            <audio
+              id="uaudioBTwo"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_55_55.mp3"
+            ></audio>
+            <button id="ubuttonBThree" onclick="thirdBU(this)">pure</button>
+            <audio
+              id="uaudioBThree"
+              src="audio/ttsMP3.com_VoiceText_2022-3-18_14_56_34.mp3"
+            ></audio>
+          </div>
         </div>
       </div>
     </div>
