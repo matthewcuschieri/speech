@@ -4,6 +4,10 @@ body {
   color: seagreen;
   background-color: seashell;
 }
+#majorcontain {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
 #snap {
   padding: 20px;
   margin: auto;
@@ -19,15 +23,6 @@ body {
   fill: seagreen;
   stroke: seagreen;
 }
-/* #snap:hover path {
-  transition: 0.2s;
-  snapdistance: 13;
-  snapstrength: 50;
-  fontsize: 350;
-} */
-/* #snap:hover {
-  border: red solid 1px;
-} */
 #snapTwo {
   padding: 20px;
   margin: auto;
@@ -90,9 +85,88 @@ body {
   stroke: seagreen;
 }
 
+#snapB {
+  padding: 20px;
+  padding-top: 30vh;
+  margin: auto;
+  display: block;
+  width: 800px;
+  height: 600px;
+  position: absolute;
+
+  left: 0;
+  grid-row: 2;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
+#snapTwoB {
+  padding: 20px;
+  padding-top: 30vh;
+  margin: auto;
+  display: block;
+  width: 900px;
+  height: 600px;
+  position: absolute;
+
+  left: 17;
+  grid-column: 2;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
+#snapThreeB {
+  padding: 20px;
+  padding-left: 60px;
+  margin: auto;
+  display: block;
+  width: 900px;
+  height: 700px;
+  position: absolute;
+  padding-top: 30vh;
+  left: 237;
+  grid-column: 3;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
+#snapFourB {
+  padding: 20px;
+  margin: auto;
+  display: block;
+  width: 900px;
+  height: 700px;
+  position: absolute;
+  padding-top: 30vh;
+  left: 237;
+  grid-column: 4;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
+#snapBFive {
+  padding: 20px;
+  margin: auto;
+  display: block;
+  width: 900px;
+  height: 700px;
+  position: absolute;
+  padding-top: 30vh;
+  left: 237;
+  grid-column: 5;
+  color: seagreen;
+  fill: seagreen;
+  stroke: seagreen;
+}
 .container {
+  grid-row: 1;
   display: grid;
   border-top: 1.5px seagreen solid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.containerTwo {
+  grid-row: 2;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 #columnOne {
@@ -125,6 +199,41 @@ body {
   margin-right: 40px;
   border-right: 1.5px seagreen dashed;
 }
+.containerTwo {
+  display: grid;
+  border-top: 1.5px seagreen solid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+#columnBOne {
+  grid-column: 1;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
+#columnBTwo {
+  grid-column: 2;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
+#columnBThree {
+  grid-column: 3;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
+#columnBFour {
+  grid-column: 4;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
+#columnBFive {
+  grid-column: 5;
+  height: 90vh;
+  margin-right: 40px;
+  border-right: 1.5px seagreen dashed;
+}
 .text-input {
   display: none;
   fill: rgb(255, 255, 255);
@@ -151,6 +260,23 @@ body {
   color: seashell;
   background-color: seagreen;
 }
+#buttonBOne,
+#buttonBTwo,
+#buttonBThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#buttonBOne:hover,
+#buttonBTwo:hover,
+#buttonBThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
 
 #ebuttonOne,
 #ebuttonTwo,
@@ -166,6 +292,24 @@ body {
 #ebuttonOne:hover,
 #ebuttonTwo:hover,
 #ebuttonThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
+
+#ebuttonBOne,
+#ebuttonBTwo,
+#ebuttonBThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#ebuttonBOne:hover,
+#ebuttonBTwo:hover,
+#ebuttonBThree:hover {
   color: seashell;
   background-color: seagreen;
 }
@@ -186,6 +330,23 @@ body {
   color: seashell;
   background-color: seagreen;
 }
+#ibuttonBOne,
+#ibuttonBTwo,
+#ibuttonBThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#ibuttonBOne:hover,
+#ibuttonBTwo:hover,
+#ibuttonBThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
 #obuttonOne,
 #obuttonTwo,
 #obuttonThree {
@@ -203,6 +364,23 @@ body {
   color: seashell;
   background-color: seagreen;
 }
+#obuttonBOne,
+#obuttonBTwo,
+#obuttonBThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#obuttonBOne:hover,
+#obuttonBTwo:hover,
+#obuttonBThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
 #ubuttonOne,
 #ubuttonTwo,
 #ubuttonThree {
@@ -217,6 +395,23 @@ body {
 #ubuttonOne:hover,
 #ubuttonTwo:hover,
 #ubuttonThree:hover {
+  color: seashell;
+  background-color: seagreen;
+}
+#ubuttonBOne,
+#ubuttonBTwo,
+#ubuttonBThree {
+  border: 1.5px seagreen solid;
+  border-radius: 50%;
+  font-family: Helvetica, sans-serif;
+  color: seagreen;
+  background-color: transparent;
+  font-size: 2rem !important;
+  width: 2.4rem;
+}
+#ubuttonBOne:hover,
+#ubuttonBTwo:hover,
+#ubuttonBThree:hover {
   color: seashell;
   background-color: seagreen;
 }
@@ -291,6 +486,72 @@ body {
   grid-column: 5;
 }
 
+#buttoncontainerB {
+  width: 250px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 40px;
+  padding-top: 500px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 1;
+}
+#ebuttonBcontainer {
+  width: 250px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 20px;
+  padding-top: 500px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 2;
+}
+#ibuttoncontainerB {
+  width: 250px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 20px;
+  padding-top: 500px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 3;
+}
+#obuttonBcontainer {
+  width: 250px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 20px;
+  padding-top: 500px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 4;
+}
+#ubuttonBcontainer {
+  width: 250px;
+  height: 50px;
+  position: absolute; /*Can also be `fixed`*/
+  padding-left: 20px;
+  padding-top: 500px;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  grid-column: 5;
+}
+
 #font-size-range,
 #textField,
 #font-name,
@@ -298,7 +559,12 @@ body {
 #textFieldTwo,
 #textFieldThree,
 #textFieldFour,
-#textFieldFive {
+#textFieldFive,
+#textFieldB,
+#textFieldTwoB,
+#textFieldThreeB,
+#textFieldFourB,
+#textFieldFiveB {
   display: none;
 }
 text {
@@ -314,6 +580,42 @@ canvas.item,
 #pronounce {
   font-size: 2rem !important;
   letter-spacing: -1.5px !important;
+}
+#pronounceTwo {
+  grid-column: span 5;
+  width: 100%;
+  border-bottom: 1.5px seagreen solid;
+  z-index: 50;
+  font-size: 2rem !important;
+  letter-spacing: -1.5px !important;
+}
+#buttonBOne,
+#buttonBTwo,
+#buttonBThree {
+  width: 60px;
+}
+#ebuttonBOne,
+#ebuttonBTwo,
+#ebuttonBThree {
+  width: 64px;
+}
+#ibuttonBOne,
+#ibuttonBTwo,
+#ibuttonBThree {
+  width: 64px;
+}
+#obuttonBOne,
+#obuttonBTwo,
+#obuttonBThree {
+  width: 64px;
+}
+#ubuttonBOne,
+#ubuttonBTwo,
+#ubuttonBThree {
+  width: 64px;
+}
+#ubuttonBThree {
+  width: 75px;
 }
 /* Glyph Inspector */
 /* 
