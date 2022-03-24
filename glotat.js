@@ -20,7 +20,6 @@ var hintingLabel = document.getElementById("hinting-label");
 function snap(v, distance, strength) {
   return v * (1.0 - strength) + strength * Math.round(v / distance) * distance;
 }
-
 function doSnap(path) {
   var i;
   var strength = snapStrength / 100.0;
@@ -62,6 +61,27 @@ function renderText() {
   snapCtx.clearRect(0, 0, 1940, 1300);
   snapPath.draw(snapCtx);
 }
+function renderTextB() {
+  if (!font) return;
+  textToRender = document.getElementById("textFieldB").value;
+
+  var options = {
+    kerning: kerning,
+    hinting: hinting,
+
+    features: {
+      liga: ligatures,
+      rlig: ligatures,
+    },
+  };
+  snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
+  doSnap(snapPath);
+  //   fill(green);
+  var snapCtx = document.getElementById("snapB").getContext("2d");
+
+  snapCtx.clearRect(0, 0, 1940, 1300);
+  snapPath.draw(snapCtx);
+}
 function renderTextTwo() {
   if (!font) return;
   textToRender = document.getElementById("textFieldTwo").value;
@@ -78,6 +98,25 @@ function renderTextTwo() {
 
   //   fill(green);
   var snapCtx = document.getElementById("snapTwo").getContext("2d");
+  snapCtx.clearRect(0, 0, 1940, 1300);
+  snapPath.draw(snapCtx);
+}
+function renderTextTwoB() {
+  if (!font) return;
+  textToRender = document.getElementById("textFieldTwoB").value;
+  var options = {
+    kerning: kerning,
+    hinting: hinting,
+    features: {
+      liga: ligatures,
+      rlig: ligatures,
+    },
+  };
+  snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
+  doSnap(snapPath);
+
+  //   fill(green);
+  var snapCtx = document.getElementById("snapTwoB").getContext("2d");
   snapCtx.clearRect(0, 0, 1940, 1300);
   snapPath.draw(snapCtx);
 }
@@ -99,7 +138,25 @@ function renderTextThree() {
   var snapCtx = document.getElementById("snapThree").getContext("2d");
   snapCtx.clearRect(0, 0, 1940, 1300);
   snapPath.draw(snapCtx);
-  fill("green");
+}
+function renderTextThreeB() {
+  if (!font) return;
+  textToRender = document.getElementById("textFieldThreeB").value;
+
+  var options = {
+    kerning: kerning,
+    hinting: hinting,
+    features: {
+      liga: ligatures,
+      rlig: ligatures,
+    },
+  };
+  snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
+  doSnap(snapPath);
+
+  var snapCtx = document.getElementById("snapThreeB").getContext("2d");
+  snapCtx.clearRect(0, 0, 1940, 1300);
+  snapPath.draw(snapCtx);
 }
 function renderTextFour() {
   if (!font) return;
@@ -115,8 +172,45 @@ function renderTextFour() {
   };
   snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
   doSnap(snapPath);
-  //   fill(green);
+
   var snapCtx = document.getElementById("snapFour").getContext("2d");
+  snapCtx.clearRect(0, 0, 1940, 1300);
+  snapPath.draw(snapCtx);
+}
+function renderTextFourB() {
+  if (!font) return;
+  textToRender = document.getElementById("textFieldFourB").value;
+
+  var options = {
+    kerning: kerning,
+    hinting: hinting,
+    features: {
+      liga: ligatures,
+      rlig: ligatures,
+    },
+  };
+  snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
+  doSnap(snapPath);
+  //   fill(green);
+  var snapCtx = document.getElementById("snapFourB").getContext("2d");
+  snapCtx.clearRect(0, 0, 1940, 1300);
+  snapPath.draw(snapCtx);
+}
+function renderTextFiveB() {
+  if (!font) return;
+  textToRender = document.getElementById("textFieldFiveB").value;
+  var options = {
+    kerning: kerning,
+    hinting: hinting,
+    features: {
+      liga: ligatures,
+      rlig: ligatures,
+    },
+  };
+  snapPath = font.getPath(textToRender, 0, 200, fontSize, options);
+  doSnap(snapPath);
+  //   fill(green);
+  var snapCtx = document.getElementById("snapBFive").getContext("2d");
   snapCtx.clearRect(0, 0, 1940, 1300);
   snapPath.draw(snapCtx);
 }
@@ -162,8 +256,16 @@ function onFontLoaded(font) {
   renderText();
   renderTextTwo();
   renderTextFour();
+  renderTextB();
+  renderTextTwoB();
+  renderTextFourB();
+
   renderTextFive();
+
+  renderTextThreeB();
+
   renderTextThree();
+  renderTextFiveB();
 }
 
 function onReadFile(e) {
@@ -197,7 +299,12 @@ enableHighDPICanvas("snap");
 enableHighDPICanvas("snapTwo");
 enableHighDPICanvas("snapThree");
 enableHighDPICanvas("snapFour");
+enableHighDPICanvas("snapFourB");
+enableHighDPICanvas("snapB");
+enableHighDPICanvas("snapTwoB");
+enableHighDPICanvas("snapBFive");
 enableHighDPICanvas("snapFive");
+enableHighDPICanvas("snapThreeB");
 
 opentype.load(fontFileName, function (err, font) {
   var amount, glyph, ctx, x, y, fontSize;
@@ -230,7 +337,7 @@ document.getElementById("buttonTwo").onclick = function () {
 function secondA(o) {
   document.getElementById("textField").value = o.innerHTML;
   snapDistance = 53;
-  snapStrength = 200;
+  snapStrength = 70;
   fontSize = 350;
   value = "a";
   playTwo();
@@ -372,7 +479,6 @@ function thirdI(o) {
   snapY = -90;
   value = "i";
   fontSize = 250;
-
   playIThree();
   renderTextThree();
 }
@@ -495,10 +601,407 @@ function thirdU(o) {
   renderTextFive();
 }
 document.getElementById("ubuttonThree").onclick = function () {
+  make_interpolators(prev, next);
   thirdU(this);
+
   value = "u";
 };
 function playUThree() {
   var audio = document.getElementById("uaudioThree");
+  audio.play();
+}
+// }
+// // `prev` and `next` are both lists of opentype paths
+// function make_interpolators(prev, next, options = {}) {
+//   // first, some edge cases
+//   if (prev.length == 0 && 0 == next.length) {
+//     return [];
+//   }
+//   if (next.length == 0) {
+//     return prev.map((op) =>
+//       flubber.interpolate(op.toPathData(), [op_center(op)], options)
+//     );
+//   }
+//   if (prev.length == 0) {
+//     return next.map((op) =>
+//       flubber.interpolate([op_center(op)], op.toPathData(), options)
+//     );
+//   }
+
+//   // normality
+//   var prevpaths = prev.map((op) => op.toPathData());
+//   var nextpaths = next.map((op) => op.toPathData());
+
+//   const N = Math.min(prevpaths.length - 1, nextpaths.length - 1);
+//   var interpolators = [];
+//   for (var i = 0; i < N; i++) {
+//     interpolators.push(
+//       flubber.interpolate(prevpaths[i], nextpaths[i], options)
+//     );
+//   }
+//   if (prevpaths.length > nextpaths.length) {
+//     interpolators = interpolators.concat(
+//       flubber.combine(
+//         prevpaths.slice(N),
+//         nextpaths[nextpaths.length - 1],
+//         options
+//       )
+//     );
+//   } else {
+//     interpolators = interpolators.concat(
+//       flubber.separate(
+//         prevpaths[prevpaths.length - 1],
+//         nextpaths.slice(N),
+//         options
+//       )
+//     );
+//   }
+//   return interpolators;
+// }
+
+// function split_opentype_path(opath) {
+//   // makes an empty clone of `opath`
+//   const mkop = () => {
+//     const op = new opentype.Path();
+//     op.fill = opath.fill;
+//     op.stroke = opath.stroke;
+//     op.strokeWidth = opath.strokeWidth;
+//     op.holes = [];
+//     return op;
+//   };
+//   // decides whether bbox `b` contains bbox `c`
+//   const contains = (b, c) =>
+//     b.x1 < c.x1 && c.x2 < b.x2 && b.y1 < c.y1 && c.y2 < b.y2;
+
+//   // split into parts
+//   var opaths = opath.commands
+//     .reduce(
+//       (opaths, c) => {
+//         if (c.type == "Z") {
+//           return [mkop()].concat(opaths);
+//         }
+//         opaths[0].commands.push(c);
+//         return opaths;
+//       },
+//       [mkop()]
+//     )
+//     .reverse()
+//     .filter((l) => l.commands.length > 0);
+
+//   // determine hole structure
+//   opaths.forEach((op) => {
+//     op.bbox = op.getBoundingBox();
+//     op.centroid = op_center(op);
+//   });
+//   for (var j = 0; j < opaths.length; j++) {
+//     const potential_hole = opaths[j];
+//     const solid = _.find(
+//       opaths,
+//       (solid) => solid && contains(solid.bbox, potential_hole.bbox)
+//     );
+//     if (solid) {
+//       solid.holes.push(potential_hole);
+//       potential_hole.fill = "#eee";
+//       opaths[j] = null;
+//     }
+//   }
+//   opaths = opaths.filter((solid) => solid);
+
+//   return opaths;
+// }
+// function zip(l, r) {
+//   var z = [];
+//   const N = Math.max(l.length, r.length);
+//   for (var i = 0; i < N; i++) {
+//     z.push({ le: l[i] || undefined, ri: r[i] || undefined });
+//   }
+//   return z;
+// }
+// function op_center(op) {
+//   return [
+//     d3.mean(op.commands.filter((c) => c.type != "Z").map((c) => c.x)),
+//     d3.mean(op.commands.filter((c) => c.type != "Z").map((c) => c.y)),
+//   ];
+// }
+
+//second row
+document.getElementById("buttonBOne").onclick = function () {
+  firstBA(this);
+  value = "a";
+};
+function firstBA(o) {
+  document.getElementById("textFieldB").value = o.innerHTML;
+  snapDistance = 13;
+  snapStrength = 50;
+  fontSize = 150;
+  snapX = 83;
+  value = "a";
+  renderTextB();
+}
+document.getElementById("buttonBTwo").onclick = function () {
+  secondBA(this);
+  value = "b";
+};
+function secondBA(o) {
+  document.getElementById("textFieldB").value = o.innerHTML;
+  snapDistance = 53;
+  snapStrength = 70;
+  fontSize = 150;
+  value = "a";
+  renderTextB();
+}
+
+function thirdBA(o) {
+  document.getElementById("textFieldB").value = o.innerHTML;
+  snapDistance = 43;
+  snapStrength = 10;
+  snapX = 3;
+  fontSize = 150;
+  value = "a";
+
+  renderTextB();
+}
+document.getElementById("buttonBThree").onclick = function () {
+  thirdBA(this);
+  value = "b";
+};
+
+function playB() {
+  // var audio = document.getElementById("audioB");
+  audio.play();
+}
+function playBTwo() {
+  // var audio = document.getElementById("audioBTwo");
+  audio.play();
+}
+
+function playBThree() {
+  // var audio = document.getElementById("audioBThree");
+  audio.play();
+}
+//eB button stuff//
+function firstBE(o) {
+  document.getElementById("textFieldTwoB").value = o.innerHTML;
+  snapDistance = 43;
+  snapStrength = 60;
+  snapX = 83;
+  fontSize = 150;
+  value = "e";
+
+  renderTextTwoB();
+}
+document.getElementById("ebuttonBOne").onclick = function () {
+  firstBE(this);
+  value = "e";
+};
+function playE() {
+  // var audio = document.getElementById("eaudio");
+  audio.play();
+}
+
+function secondBE(o) {
+  document.getElementById("textFieldTwoB").value = o.innerHTML;
+  snapDistance = 103;
+  snapStrength = 40;
+  snapX = 13;
+  snapY = 10;
+  fontSize = 150;
+  value = "e";
+
+  renderTextTwoB();
+}
+document.getElementById("ebuttonBTwo").onclick = function () {
+  secondE(this);
+  value = "e";
+};
+function playETwo() {
+  var audio = document.getElementById("eaudioTwo");
+  audio.play();
+}
+
+function thirdBE(o) {
+  document.getElementById("textFieldTwoB").value = o.innerHTML;
+  snapDistance = 53;
+  snapStrength = 30;
+  snapX = 13;
+  fontSize = 150;
+  snapY = 20;
+  value = "e";
+  renderTextTwoB();
+}
+document.getElementById("ebuttonBThree").onclick = function () {
+  thirdE(this);
+  value = "e";
+};
+function playEThree() {
+  var audio = document.getElementById("eaudioThree");
+  audio.play();
+}
+
+//iB button stuff//
+function firstBI(o) {
+  document.getElementById("textFieldThreeB").value = o.innerHTML;
+  snapDistance = 43;
+  snapStrength = 60;
+  snapX = 13;
+  fontSize = 150;
+  value = "i";
+  renderTextThreeB();
+}
+document.getElementById("ibuttonBOne").onclick = function () {
+  firstBI(this);
+  value = "i";
+};
+function playE() {
+  // var audio = document.getElementById("eaudio");
+  audio.play();
+}
+
+function secondBI(o) {
+  document.getElementById("textFieldThreeB").value = o.innerHTML;
+  snapDistance = 103;
+  snapStrength = 30;
+  snapX = 13;
+
+  value = "i";
+  renderTextThreeB();
+}
+document.getElementById("ibuttonBTwo").onclick = function () {
+  secondBI(this);
+  value = "i";
+};
+function playETwo() {
+  audio.play();
+}
+
+function thirdBI(o) {
+  document.getElementById("textFieldThreeB").value = o.innerHTML;
+  snapDistance = 53;
+  snapStrength = 10;
+  fontSize = 150;
+  value = "i";
+  renderTextThreeB();
+}
+document.getElementById("ibuttonBThree").onclick = function () {
+  thirdBI(this);
+  value = "i";
+};
+function playEThree() {
+  // var audio = document.getElementById("eaudioThree");
+  audio.play();
+}
+
+//oB button stuff//
+function firstBO(o) {
+  document.getElementById("textFieldFourB").value = o.innerHTML;
+  snapDistance = 43;
+  snapStrength = 40;
+
+  fontSize = 130;
+  value = "o";
+
+  renderTextFourB();
+}
+document.getElementById("obuttonBOne").onclick = function () {
+  firstBO(this);
+  value = "e";
+};
+function playO() {
+  // var audio = document.getElementById("eaudio");
+  audio.play();
+}
+
+function secondBO(o) {
+  document.getElementById("textFieldFourB").value = o.innerHTML;
+  snapDistance = 103;
+  snapStrength = 40;
+  snapX = 13;
+  snapY = 10;
+  fontSize = 130;
+  value = "o";
+
+  renderTextFourB();
+}
+document.getElementById("obuttonBTwo").onclick = function () {
+  secondBO(this);
+  value = "e";
+};
+function playOTwo() {
+  var audio = document.getElementById("oaudioTwo");
+  audio.play();
+}
+
+function thirdBO(o) {
+  document.getElementById("textFieldFourB").value = o.innerHTML;
+  snapDistance = 53;
+  snapStrength = 40;
+  snapX = 153;
+  fontSize = 130;
+  value = "e";
+  renderTextFourB();
+}
+document.getElementById("obuttonBThree").onclick = function () {
+  thirdBO(this);
+  value = "e";
+};
+function playOThree() {
+  var audio = document.getElementById("eaudioThree");
+  audio.play();
+}
+
+//uB button stuff//
+function firstBU(o) {
+  document.getElementById("textFieldFiveB").value = o.innerHTML;
+  snapDistance = 43;
+  snapStrength = 60;
+  snapX = 83;
+  fontSize = 150;
+  value = "u";
+  renderTextFiveB();
+}
+document.getElementById("ubuttonBOne").onclick = function () {
+  firstBU(this);
+  value = "e";
+};
+function playUB() {
+  // var audio = document.getElementById("eaudio");
+  audio.play();
+}
+
+function secondBU(o) {
+  document.getElementById("textFieldFiveB").value = o.innerHTML;
+  snapDistance = 13;
+  snapStrength = 60;
+  snapX = 13;
+  snapY = 10;
+  fontSize = 150;
+  value = "u";
+
+  renderTextFiveB();
+}
+document.getElementById("ubuttonBTwo").onclick = function () {
+  secondBU(this);
+  value = "e";
+};
+function playUBTwo() {
+  var audio = document.getElementById("uaudioTwo");
+  audio.play();
+}
+
+function thirdBU(o) {
+  document.getElementById("textFieldFiveB").value = o.innerHTML;
+  snapDistance = 13;
+  snapStrength = 40;
+  snapX = 13;
+  fontSize = 100;
+  value = "e";
+  renderTextFiveB();
+}
+document.getElementById("ubuttonBThree").onclick = function () {
+  thirdBU(this);
+  value = "e";
+};
+function playUBThree() {
+  var audio = document.getElementById("eaudioThree");
   audio.play();
 }
